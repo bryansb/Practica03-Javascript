@@ -1,0 +1,67 @@
+html {
+	height: 100%;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	padding-left: 5%;
+	padding-right: 5%;
+	clear: none;
+	float: none;
+	min-height: 100%;
+}
+
+.calculator  {
+    margin:0 auto;
+    padding:20px;
+    background-color:#333333;
+    width:340px;
+    height:480px;
+    border-radius: 25px;
+}
+
+.calculator td button{
+    width:70px;
+    height: 70px;
+    font-size: 25px;
+    clear: both;
+} 
+
+.calculator td button:hover  {
+    background-color: cornflowerblue;
+}
+
+.calculator td #addition:hover, #subtraction:hover, #multiplication:hover, #division:hover  {
+    background-color: lightcoral;
+}
+
+.calculator td #clear:hover, #equal:hover{
+    background-color: lightgreen;
+}
+
+.calculator td #dot:hover{
+    background-color: lightsalmon;
+}
+
+#addition, #equal {
+    height: 145px;
+}
+
+#zero {
+    width: 147px;
+}
+
+#panel, #answer{
+    display:block;
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 10px;
+    font-size: 35px;
+    width:295px;
+    height: 60px;
+    border-radius: 5px;
+    overflow-x: scroll;
+    background-color:whitesmoke;
+}

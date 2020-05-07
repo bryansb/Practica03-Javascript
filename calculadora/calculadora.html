@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="calculadora_estilos.css">
+    <script src="calculadora_operaciones.js"></script>
+</head>
+<body onload="init()">
+    <section>
+        <h1>Calculadora Básica</h1>
+        <table class="calculator">
+            <tr>
+                <th colspan="4"><span id="panel"> </span></th>
+            </tr>
+            <tr>
+                <th colspan="4"><span id="answer"> </span></th>
+            </tr>
+            <tr>
+              <td ><button id="clear" onclick="clearPanel()">C</button></td>
+              <td ><button id="division" value="/" onclick="writeValue(this.value)">/</button></td>
+              <td ><button id="multiplication" value="*" onclick="writeValue(this.value)">*</button></td>
+              <td ><button id="subtraction" value="-" onclick="writeValue(this.value)">-</button></td>
+            </tr>
+            <tr>
+              <td ><button id="seven" value="7" onclick="writeValue(this.value)">7</button></td>
+              <td ><button id="eight" value="8" onclick="writeValue(this.value)">8</button></td>
+              <td ><button id="nine" value="9" onclick="writeValue(this.value)">9</button></td>
+              <td  rowspan="2"><button id="addition" value="+" onclick="writeValue(this.value)">+</button></td>
+            </tr>
+            <tr>
+              <td ><button id="four" value="4" onclick="writeValue(this.value)">4</button></td>
+              <td ><button id="five" value="5" onclick="writeValue(this.value)">5</button></td>
+              <td ><button id="six" value="6" onclick="writeValue(this.value)">6</button></td>
+            </tr>
+            <tr>
+              <td ><button id="one" value="1" onclick="writeValue(this.value)">1</button></td>
+              <td ><button id="two" value="2" onclick="writeValue(this.value)">2</button></td>
+              <td ><button id="three" value="3" onclick="writeValue(this.value)">3</button></td>
+              <td  rowspan="2"><button id="equal" onclick="getAnswer()">=</button></td>
+            </tr>
+            <tr>
+              <td  colspan="2"><button id="zero" value="0" onclick="writeValue(this.value)">0</button></td>
+              <td ><button id="dot" value="." onclick="writeValue(this.value)">.</button></td>
+            </tr>
+          </table>
+    </section>
+</body>
+</html>
