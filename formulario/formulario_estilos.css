@@ -1,0 +1,39 @@
+html {
+	height: 100%;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	padding-left: 5%;
+	padding-right: 5%;
+	clear: none;
+	float: none;
+	min-height: 100%;
+}
+
+#form {
+    display: grid;
+    margin: 1.5em auto;
+    font-size: 105%;
+    width: 30%;
+}
+
+#form input{
+    width: 500px;
+}
+
+#form button {
+    margin: 1em auto;
+    float: right;
+    width: 25% !important;
+}
+
+#form label {
+    margin-top: 1em;
+}
+
+#form legend {
+    font-size: 115%;
+}
