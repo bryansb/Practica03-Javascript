@@ -12,26 +12,36 @@
         <h1>Formulario de registro con validaciones</h1>
         
         <article>
-            <fieldset id="form">
-                <legend>Registro</legend>
-                <label>Cédula:</label>
-                <input type="text" id="id">
-                <label>Nombres:</label>
-                <input type="text" id="names">
-                <label>Apellidos:</label>
-                <input type="text" id="last_names">
-                <label>Dirección:</label>
-                <input type="text" id="address">
-                <label>Teléfono:</label>
-                <input type="text" id="phone">
-                <label>Fecha de nacimiento:</label>
-                <input type="text" id="birthday">
-                <label>Correo electrónico</label>
-                <input type="text" id="email">
-                <label>Ingrese una contraseña:</label>
-                <input type="password" id="password">
-                <button type="submit" value="send">Enviar</button>
-            </fieldset>
+            <form onsubmit="return init()">
+                <fieldset id="form">
+                    <legend>Registro</legend>
+                    <label>Cédula:</label>
+                    <input type="text" id="dni" placeholder="DNI de 10 digitos" onkeyup="validateDNI()">
+                    <span id="dni_span" class="error_message"></span>
+                    <label>Nombres:</label>
+                    <input type="text" id="names" placeholder="Ingrese los dos nombres" onkeyup="validateNames()">
+                    <span id="names_span" class="error_message"></span>
+                    <label>Apellidos:</label>
+                    <input type="text" id="last_names" placeholder="Ingrese los dos apellidos" onkeyup="validateLastNames()">
+                    <span id="lastNames_span" class="error_message"></span>
+                    <label>Dirección:</label>
+                    <input type="text" id="address" placeholder="Dirección principal y secundaria">
+                    <span id="address_span" class="error_message"></span>
+                    <label>Teléfono:</label>
+                    <input type="text" id="phone" placeholder="Móvil o fijo" onkeyup="validatePhone()">
+                    <span id="phone_span" class="error_message"></span>
+                    <label>Fecha de nacimiento:</label>
+                    <input type="text" id="birthday" placeholder="dd/mm/aaaa" onkeyup="birthdayValidation()">
+                    <span id="birthday_span" class="error_message"></span>
+                    <label>Correo electrónico</label>
+                    <input type="text" id="email" placeholder="xxx@est.ups.edu.ec o xxx@ups.edu.ec" onkeyup="emailValidation()">
+                    <span id="email_span" class="error_message"></span>
+                    <label>Contraseña:</label>
+                    <input type="password" id="password" placeholder="Mínimo 8 caracteres: una mayúscula, y un caracter especial" onkeyup="passwordValidation()">
+                    <span id="password_span" class="error_message"></span>
+                    <button type="submit" value="send" >Enviar</button>
+                </fieldset>
+            </form>
         </article>
     </section>
 </body>
