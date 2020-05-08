@@ -10,7 +10,8 @@ body {
 	padding-right: 5%;
 	clear: none;
 	float: none;
-	min-height: 100%;
+    min-height: 100%;
+    background-color: whitesmoke;
 }
 
 .calculator  {
@@ -50,11 +51,11 @@ body {
 }
 
 #zero {
-    width: 147px;
+    width: 145px;
 }
 
 #panel, #answer{
-    display:block;
+    /*display:block;
     text-align: right;
     padding-top: 10px;
     padding-right: 10px;
@@ -63,5 +64,11 @@ body {
     height: 60px;
     border-radius: 5px;
     overflow-x: scroll;
-    background-color:whitesmoke;
+    background-color:whitesmoke;*/
+    font-size: 23px;
+    height: 25px;
+    text-align: right;
+    padding: 10px;
+    color: turquoise;
+    background: black;
 }

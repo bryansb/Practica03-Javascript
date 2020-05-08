@@ -10,12 +10,20 @@
     <section>
         <h1>Calculadora Básica</h1>
         <table class="calculator">
-            <tr>
+            <!-- <tr>
                 <th colspan="4"><span id="panel"> </span></th>
             </tr>
             <tr>
                 <th colspan="4"><span id="answer"> </span></th>
+            </tr> -->
+
+            <tr>
+              <th colspan="4"> <input readonly type="text" id="panel"> </th>
             </tr>
+            <tr>
+                <th colspan="4"> <input readonly type="text" id="answer" placeholder="0"> </span></th>
+            </tr>
+
             <tr>
               <td ><button id="clear" onclick="clearPanel()">C</button></td>
               <td ><button id="division" value="/" onclick="writeValue(this.value)">/</button></td>
