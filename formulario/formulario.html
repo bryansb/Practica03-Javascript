@@ -12,32 +12,32 @@
         <h1>Formulario de registro con validaciones</h1>
         
         <article>
-            <form onsubmit="return init()">
+            <form onsubmit="return validateEmptyInputs()">
                 <fieldset id="form">
                     <legend>Registro</legend>
                     <label>Cédula:</label>
                     <input type="text" id="dni" placeholder="DNI de 10 digitos" onkeyup="validateDNI()">
                     <span id="dni_span" class="error_message"></span>
                     <label>Nombres:</label>
-                    <input type="text" id="names" placeholder="Ingrese los dos nombres" onkeyup="validateNames()">
+                    <input type="text" id="names" placeholder="Ingrese sus dos nombres" onkeyup="validateNames()">
                     <span id="names_span" class="error_message"></span>
                     <label>Apellidos:</label>
-                    <input type="text" id="last_names" placeholder="Ingrese los dos apellidos" onkeyup="validateLastNames()">
+                    <input type="text" id="last_names" placeholder="Ingrese sus dos apellidos" onkeyup="validateLastNames()">
                     <span id="lastNames_span" class="error_message"></span>
                     <label>Dirección:</label>
-                    <input type="text" id="address" placeholder="Dirección principal y secundaria">
+                    <input type="text" id="address" placeholder="Dirección principal y secundaria" onkeyup="validateAddress()">
                     <span id="address_span" class="error_message"></span>
                     <label>Teléfono:</label>
                     <input type="text" id="phone" placeholder="Móvil o fijo" onkeyup="validatePhone()">
                     <span id="phone_span" class="error_message"></span>
                     <label>Fecha de nacimiento:</label>
-                    <input type="text" id="birthday" placeholder="dd/mm/aaaa" onkeyup="birthdayValidation()">
+                    <input type="text" id="birthday" placeholder="dd/mm/aaaa" onkeyup="validateBirthday()">
                     <span id="birthday_span" class="error_message"></span>
                     <label>Correo electrónico</label>
-                    <input type="text" id="email" placeholder="xxx@est.ups.edu.ec o xxx@ups.edu.ec" onkeyup="emailValidation()">
+                    <input type="text" id="email" placeholder="aaa@est.ups.edu.ec o aaa@ups.edu.ec" onkeyup="emailValidation()">
                     <span id="email_span" class="error_message"></span>
                     <label>Contraseña:</label>
-                    <input type="password" id="password" placeholder="Mínimo 8 caracteres: una mayúscula, y un caracter especial" onkeyup="passwordValidation()">
+                    <input type="password" id="password" placeholder="8 caracteres, mayúscula/minúscula y un caracter especial" onkeyup="passwordValidation()">
                     <span id="password_span" class="error_message"></span>
                     <button type="submit" value="send" >Enviar</button>
                 </fieldset>
