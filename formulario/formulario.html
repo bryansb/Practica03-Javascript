@@ -12,17 +12,17 @@
         <h1>Formulario de registro con validaciones</h1>
         
         <article>
-            <form onsubmit="return validateEmptyInputs()">
+            <form action="formulario_resultado.php" method="POST" onsubmit="return validateEmptyInputs()">
                 <fieldset id="form">
                     <legend>Registro</legend>
                     <label>Cédula:</label>
                     <input type="text" id="dni" placeholder="DNI de 10 digitos" onkeyup="validateDNI()">
                     <span id="dni_span" class="error_message"></span>
                     <label>Nombres:</label>
-                    <input type="text" id="names" placeholder="Ingrese sus dos nombres" onkeyup="validateNames()">
+                    <input type="text" name="nombres" id="names" placeholder="Ingrese sus dos nombres" onkeyup="validateNames()">
                     <span id="names_span" class="error_message"></span>
                     <label>Apellidos:</label>
-                    <input type="text" id="last_names" placeholder="Ingrese sus dos apellidos" onkeyup="validateLastNames()">
+                    <input type="text" name="apellidos" id="last_names" placeholder="Ingrese sus dos apellidos" onkeyup="validateLastNames()">
                     <span id="lastNames_span" class="error_message"></span>
                     <label>Dirección:</label>
                     <input type="text" id="address" placeholder="Dirección principal y secundaria" onkeyup="validateAddress()">
