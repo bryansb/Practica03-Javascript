@@ -33,6 +33,7 @@ img {
     width: 50%;
     position: relative;
     visibility: hidden;
+    transition-timing-function: linear;
 }
 
 button {
