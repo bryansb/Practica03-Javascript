@@ -1,0 +1,53 @@
+html {
+	height: 100%;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	padding-left: 5%;
+	padding-right: 5%;
+	clear: none;
+	float: none;
+    min-height: 100%;
+    background-color: black;
+}
+
+
+.slider {
+    display: grid;
+    overflow: hidden;
+}
+
+.buttons {
+    margin: 0 auto;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+img {
+    margin: 0 auto;
+    width: 50%;
+    position: relative;
+    visibility: hidden;
+}
+
+button {
+    margin: 5% auto;
+    font-size: 25px;
+}
+
+#previous:hover, #next:hover {
+    background-color: turquoise;
+}
+
+#previous:disabled, #next:disabled {
+    background-color: gray;
+}
+
+#start:hover {
+    background-color: tomato;
+}

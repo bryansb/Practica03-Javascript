@@ -21,6 +21,7 @@ function getAnswer(){
     var answer = document.getElementById('answer');
 
     var result = eval(panel.value);
-    answer.value = panel.value + "=" + result;
+
+    answer.value = panel.value + "=" + (result*1);
     panel.value = result;
 }
