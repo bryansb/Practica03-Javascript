@@ -1,32 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Source+Sans+Pro&display=swap');
+
 html {
 	height: 100%;
 }
 
 body {
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0% auto;
 	width: 90%;
 	padding-left: 5%;
 	padding-right: 5%;
 	clear: none;
 	float: none;
     min-height: 100%;
-    background-color: whitesmoke;
+    background-color: lightslategray;
+}
+
+h1 {
+    font-family: Source Sans Pro;
+    text-align: center;
+    margin: 1em auto;
+    color: snow;
+    background-color: #333333;
 }
 
 .calculator  {
-    margin:0 auto;
-    padding:20px;
-    background-color:#333333;
-    width:340px;
-    height:480px;
+    margin: 0% auto;
+    padding: 20px;
+    width: 340px;
+    height: 480px;
     border-radius: 25px;
+    background-color: #333333;
 }
 
 .calculator td button{
-    width:70px;
-    height: 70px;
+    font-family: Inconsolata;
     font-size: 25px;
+    width: 70px;
+    height: 70px;
     clear: both;
 } 
 
@@ -55,20 +65,11 @@ body {
 }
 
 #panel, #answer{
-    /*display:block;
-    text-align: right;
-    padding-top: 10px;
-    padding-right: 10px;
-    font-size: 35px;
-    width:295px;
-    height: 60px;
-    border-radius: 5px;
-    overflow-x: scroll;
-    background-color:whitesmoke;*/
-    font-size: 23px;
+    font-family: Inconsolata;
+    font-size: 25px;
+    padding: 10px;
     height: 25px;
     text-align: right;
-    padding: 10px;
-    color: turquoise;
     background: black;
+    color: turquoise;
 }

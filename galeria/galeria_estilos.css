@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
 html {
 	height: 100%;
 }
 
 body {
-	margin-left: auto;
-	margin-right: auto;
+    margin: 0% auto;
 	width: 90%;
 	padding-left: 5%;
 	padding-right: 5%;
@@ -14,6 +15,26 @@ body {
     background-color: black;
 }
 
+h1 {
+    font-family: Source Sans Pro;
+    text-align: center;
+    margin: 1em auto;
+    color: snow;
+    background-color: #333333;
+}
+
+img {
+    margin: 0% auto;
+    width: 60%;
+    position: relative;
+    visibility: hidden;
+}
+
+button {
+    font-family: Source Sans Pro;
+    font-size: 25px;
+    margin: 5% auto;
+}
 
 .slider {
     display: grid;
@@ -24,29 +45,12 @@ body {
     margin: 0 auto;
 }
 
-h1 {
-    color: whitesmoke;
-}
-
-img {
-    margin: 0 auto;
-    width: 50%;
-    position: relative;
-    visibility: hidden;
-    transition-timing-function: linear;
-}
-
-button {
-    margin: 5% auto;
-    font-size: 25px;
-}
-
 #previous:hover, #next:hover {
     background-color: turquoise;
 }
 
 #previous:disabled, #next:disabled {
-    background-color: gray;
+    background-color: lightslategray;
 }
 
 #start:hover {

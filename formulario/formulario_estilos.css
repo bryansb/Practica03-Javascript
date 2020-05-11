@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
 html {
 	height: 100%;
 }
@@ -11,34 +13,47 @@ body {
 	clear: none;
 	float: none;
     min-height: 100%;
-    background-color: linen;
+    background-color: lightslategray;
+}
+
+h1 {
+    font-family: Source Sans Pro;
+    text-align: center;
+    margin: 1em auto;
+    color: snow;
+    background-color: #333333;
 }
 
 #form {
-    display: grid;
-    margin: 1.5em auto;
+    font-family: Source Sans Pro;
     font-size: 105%;
     width: 30%;
+    display: grid;
+    margin: 1.5em auto;
     background-color: whitesmoke;
 }
 
 #form input{
     width: 500px;
-    font-size: 18px;
-    height: 25px;
+    font-size: 15px;
+    height: 20px;
 }
 
 #form button {
-    margin: 1em auto;
+    font-family: Source Sans Pro;
+    font-size: 20px;
+    margin: 0.5em auto;
     float: right;
     width: 25% !important;
 }
 
 #form label {
-    margin-top: 1em;
+    text-decoration: solid;
+    margin-top: 0.5em;
 }
 
 #form legend {
+    background: whitesmoke;
     font-size: 115%;
 }
 

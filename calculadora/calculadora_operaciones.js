@@ -1,27 +1,18 @@
 function init(){
-    var answer = document.getElementById('answer');
-    answer.value = "0";
+    document.getElementById('answer').value = 0;
 }
 
 function writeValue(value){
-    var panel = document.getElementById('panel');
-    panel.value += value;
+    document.getElementById('panel').value += value;
 }
 
 function clearPanel(){
-    var panel = document.getElementById('panel');
-    var answer = document.getElementById('answer');
-
-    panel.value = " ";
-    answer.value = "0";
+    document.getElementById('panel').value = " ";
+    document.getElementById('answer').value = "0";
 }
 
 function getAnswer(){
-    var panel = document.getElementById('panel');
-    var answer = document.getElementById('answer');
-
     var result = eval(panel.value);
-
-    answer.value = panel.value + "=" + (result*1);
-    panel.value = result;
+    document.getElementById('answer').value = document.getElementById('panel').value + "=" + (result);
+    document.getElementById('panel').value = result;
 }

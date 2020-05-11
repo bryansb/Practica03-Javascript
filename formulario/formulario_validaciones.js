@@ -1,7 +1,6 @@
 var flags = [false, false, false, false, false, false, false, false];
 
 function validateEmptyInputs(){
-    console.log(flags);
     var flag = false;
     var registerForm = document.forms[0].elements;
     var form_length = registerForm.length;
@@ -62,7 +61,6 @@ function printValidationError(variable, idSpan, mesagge){
     variable.style.border = '2px solid red';
     idSpan.style.color = 'red';
     variable.className = 'error_message';
-    
 }
 
 function validate(variable, idSpan){
@@ -356,7 +354,6 @@ function passwordValidation(){
                         index = password_input.value.length;
                     }
                 }
-
             }
             
             if (containtsUpperCase && containtsLowerCase) {

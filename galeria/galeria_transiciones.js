@@ -1,15 +1,29 @@
 var images = ["images/image0.jpg", "images/image1.jpg", "images/image2.jpg", "images/image3.jpg", "images/image4.jpg", 
                 "images/image5.jpg", "images/image6.jpg", "images/image7.jpg", "images/image8.jpg", "images/image9.jpg"];
 var imagesArray = new Array(5);
-var imagesArrayPosition = 0;
-var leftPorcentage = 0;
-var rigthPorcentage = 0;
+var imagesArrayPosition = 0; // Index actual que tendrá el array de imágenes en la galería.
 
-var control = 0;
+// Variables de velocidad:
+var porcentageIncrement = 2; // Incremento += 2%.
+var animationSpeed = 25; // Intervalo: Por defecto, 25 ms.
 
-var velocidad = 2; // Incremento
+// Variables de posición:
+var rigthPorcentage = 0; // Valor actual que tendrá hacia la derecha.
+var positionLimitMax = 100; // Movimiento máximo a la que llegará la animación.
+var positionLimitMin = 0; // Movimiento mínimo a la que llegará la animación, sirve para centrar.
+var positionMove = 80; // Posicion relativa que permite realizar la segunda animación.
 
-var velocidad2 = 1; // Intervalo
+// Variables de control:
+var flagAnimation = false; // Bandera Global que controla las animaciones.
+var stopRight; // Variable que almacena la animación principal hacia la derecha.
+var stopLeft; // Variable que almacena la animación principal hacia la izquiera.
+var stopAux; // Variable que almacena la segunda animación tanto para la izq, como der.
+
+function load(){
+    if (!flagAnimation){
+        loadImages();
+    }
+}
 
 function loadImages(){
     imagesArrayPosition = 0;
@@ -38,84 +52,74 @@ function loadImages(){
     // Se carga la primera imagen y se la visualiza
     document.getElementById("currentImage").src = imagesArray[0];
     document.getElementById("currentImage").style.visibility = 'visible';
-    
     document.getElementById("currentImage").style.right = 0+'%';
-    
+
     checkArrayPosition();
 }
 
-var stopRight;
+
 function previousImage(){
     imagesArrayPosition--;
     checkArrayPosition();
-    
-    if (!flagG) {
-        stopRight = setInterval(moveRight, 25);
+    if (!flagAnimation) {
+        stopRight = setInterval(moveRight, animationSpeed);
     }
-    
 }
 
-function moveRight () {
-    flagG = true;
-    document.getElementById("currentImage").style.right = decrementRigth(rigthPorcentage, velocidad)+'%';
-    if (rigthPorcentage <= -100) {
+function moveRight(){
+    flagAnimation = true;
+    document.getElementById("currentImage").style.right = decrementRigth(rigthPorcentage, porcentageIncrement)+'%';
+    if (rigthPorcentage <= -positionLimitMax) {
         changeImage();
         clearInterval(stopRight);
-        rigthPorcentage = 90;
-        document.getElementById("currentImage").style.right = "90%";
-        stopAux = setInterval(aux2, 25);
+        rigthPorcentage = positionMove;
+        document.getElementById("currentImage").style.right = `-${rigthPorcentage}%`;
+        stopAux = setInterval(secondMoveRight, animationSpeed);
     }
 }
 
-function aux2 () {
-    document.getElementById("currentImage").style.right = decrementRigth(rigthPorcentage, velocidad)+'%';
-    if (rigthPorcentage <= 0) {
-        console.log(rigthPorcentage);
-        flagG = false;
+function secondMoveRight(){
+    document.getElementById("currentImage").style.right = decrementRigth(rigthPorcentage, porcentageIncrement)+'%';
+    if (rigthPorcentage <= positionLimitMin) {
+        flagAnimation = false;
         clearInterval(stopAux);
         rigthPorcentage = 0;
-        document.getElementById("currentImage").style.right = "0%";
+        document.getElementById("currentImage").style.right = `${rigthPorcentage}%`;
     }
 }
 
-var stopLeft;
-var flagG = false;
+
 function nextImage(){
     imagesArrayPosition++;
     checkArrayPosition();
-    
-    if (!flagG){
-        stopLeft = setInterval(moveLeft, 25);
+    if (!flagAnimation){
+        stopLeft = setInterval(moveLeft, animationSpeed);
     }
 }
 
-
-var stopAux;
-function moveLeft () {
-    flagG = true;
-    document.getElementById("currentImage").style.right = incrementRigth(rigthPorcentage, velocidad)+'%';
-    if (rigthPorcentage >= 100) {
+function moveLeft(){
+    flagAnimation = true;
+    document.getElementById("currentImage").style.right = incrementRigth(rigthPorcentage, porcentageIncrement)+'%';
+    if (rigthPorcentage >= positionLimitMax) {
         changeImage();
         clearInterval(stopLeft);
-        rigthPorcentage = -90;
-        document.getElementById("currentImage").style.right = "-90%";
-        stopAux = setInterval(aux, 25);
+        rigthPorcentage = -positionMove;
+        document.getElementById("currentImage").style.right = `-${rigthPorcentage}%`;
+        stopAux = setInterval(secondMoveLeft, animationSpeed);
     }
 }
 
-function aux(){
-    document.getElementById("currentImage").style.right = incrementRigth(rigthPorcentage, velocidad)+'%';
-    if (rigthPorcentage >= 0) {
-        console.log(rigthPorcentage);
-        flagG = false;
+function secondMoveLeft(){
+    document.getElementById("currentImage").style.right = incrementRigth(rigthPorcentage, porcentageIncrement)+'%';
+    if (rigthPorcentage >= positionLimitMin) {
+        flagAnimation = false;
         clearInterval(stopAux);
         rigthPorcentage = 0;
-        document.getElementById("currentImage").style.right = "0%";
+        document.getElementById("currentImage").style.right = `${rigthPorcentage}%`;
     }
 }
 
 function checkArrayPosition(){
-
     if (imagesArrayPosition == 0) {
         document.getElementById("previous").disabled = true;
         document.getElementById("next").disabled = false;
@@ -126,19 +130,10 @@ function checkArrayPosition(){
         document.getElementById("previous").disabled = false;
         document.getElementById("next").disabled = false;
     }
-
 }
 
-function getRandomNumber(max) {
+function getRandomNumber (max) {
     return (Math.floor(Math.random()*(max+1)));
-}
-
-function setTimeZero () {
-    document.getElementById("currentImage").style.transition = 0+'s';
-}
-
-function setTime () {
-    document.getElementById("currentImage").style.transition = `${2}s`;
 }
 
 function incrementRigth (value, step) {
@@ -153,20 +148,6 @@ function decrementRigth (value, step) {
     return value;
 }
 
-function incrementLeft (value, step) {
-    value += step;
-    rigthPorcentage
-    //leftPorcentage = value;
-    //rigthPorcentage = (value*-1);
-    return value;
-}
-
 function changeImage(){
     document.getElementById("currentImage").src = imagesArray[imagesArrayPosition];
-}
-
-function load(){
-    if (!flagG){
-        loadImages();
-    }
 }
